@@ -1,6 +1,10 @@
+
 Template.viewer.helpers({
-  onlineViewerCount: function(){
-    var onlineUserCount = userPresence.find({}).count();
-    return onelineUserCount > 0 ? onelineUserCount:""
+  onlineUserCount: function(){
+    var onlineUserCount = UserConnections.find({}).count()
+    if (onlineUserCount) {
+      return onlineUserCount
+    }
+    return ""
   }
 });
