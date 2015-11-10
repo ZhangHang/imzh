@@ -1,7 +1,7 @@
 var totem = ["🐵","🙈","🙉","🙊","🐒"]
 Template.viewer.helpers({
-  onlineUserCount: function(){
+  totem: function(){
     var onlineUserCount = UserConnections.find({}).count()
-    return totem[onlineUserCount % totem.length - 1]
+    return totem[onlineUserCount % totem.length]
   }
 });
