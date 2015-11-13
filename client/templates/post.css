@@ -1,0 +1,27 @@
+#container article {
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 40px;
+  transition: all 0.2s linear;
+  border-radius: 6px;
+  -webkit-user-select: text;
+}
+#container article:nth-child(n+2) {
+  margin-top: 20px;
+}
+#container article::after {
+  content: '————';
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: rgba(240, 240, 240, 1);
+  text-align: center;
+}
+#container article img {
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.3);
+}
+#container article pre {
+  border-radius: 6px;
+  border-width: 0px;
+  border-color: tranparent;
+}

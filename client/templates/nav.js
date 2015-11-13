@@ -1,10 +1,10 @@
-Template.nav.helpers({
+Template.Nav.helpers({
   isDarkMode() {
     return DarkThemeMode.isOn()
   }
 });
 
-Template.nav.events({
+Template.Nav.events({
   'click #dark-mode-switch' (event, template) {
     if (DarkThemeMode.isOn()) {
       DarkThemeMode.off()

@@ -1,10 +1,10 @@
-#viewer{
+#totem{
   border-radius: 6px;
   padding: 2px 4px 2px 4px;
   font-size: 16px;
 }
 
-aside{
+#totem-aside{
   position: fixed;
   bottom: 3px;
   right: 3px;

@@ -1,11 +1,9 @@
-Meteor.subscribe('user_status_sessions')
-
 DarkThemeMode = (() => {
   let mode = {}
   let excludeSelectorList = [".leave-alone-in-dark-mode"]
 
   let IS_DARK_MODE_KEY = "isDarkMode"
-  Session.setDefault(IS_DARK_MODE_KEY, false)
+  Session.set(IS_DARK_MODE_KEY, false)
 
   mode.exclude = (selector) => {
     console.assert(typeof selector === "string")
