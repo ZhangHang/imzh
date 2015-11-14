@@ -1,16 +1,16 @@
+Router.configure({
+  layoutTemplate: 'ApplicationLayout'
+});
 Router.route('/', function() {
-  this.layout('ApplicationLayout')
   this.render("Home")
 })
 
 Router.route('/archive', function() {
-  this.layout('ApplicationLayout')
   this.render('Archive')
 })
 
 Router.route('/posts/:_id', function() {
   const params = this.params
-  this.layout('ApplicationLayout')
   const yaml = YAMLs.findOne({
     "_id": params["_id"],
     type: "post"
@@ -27,7 +27,6 @@ Router.route('/posts/:_id', function() {
 
 Router.route('/pages/:_id', function() {
   const params = this.params
-  this.layout('ApplicationLayout')
   const yaml = YAMLs.findOne({
     "_id": params["_id"],
     type: "page"
