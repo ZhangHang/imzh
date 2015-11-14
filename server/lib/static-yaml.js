@@ -15,7 +15,6 @@ StaticYAML = function(storageCollection, staticRootPath) {
     } catch (error) {
       console.log(error)
     }
-    console.log("START WATCHING")
   }
 
   function scanDir(directoryPath) {
@@ -30,7 +29,6 @@ StaticYAML = function(storageCollection, staticRootPath) {
       console.assert(state.isFile())
       try {
         let yaml = scanFile(itemPath)
-        console.log(itemPath)
         storageCollection.insert(yaml)
       } catch (error) {
         console.error(error)
@@ -45,7 +43,6 @@ StaticYAML = function(storageCollection, staticRootPath) {
     let yaml = undefined
     try {
       yaml = yfm.loadFront(filePath)
-      console.log(yaml)
     } catch (error) {
       console.error(error)
       console.log("Bad static file " + filename)

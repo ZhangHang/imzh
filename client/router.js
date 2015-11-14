@@ -2,10 +2,12 @@ Router.route('/', function() {
   this.layout('ApplicationLayout')
   this.render("Home")
 })
+
 Router.route('/archive', function() {
   this.layout('ApplicationLayout')
   this.render('Archive')
 })
+
 Router.route('/posts/:_id', function() {
   const params = this.params
   this.layout('ApplicationLayout')
@@ -14,14 +16,15 @@ Router.route('/posts/:_id', function() {
     type: "post"
   })
 
-  if (yaml) {
-    this.render("Post", {
-      data: yaml
-    })
-  }else{
+  if (!yaml) {
     this.render("Void")
+    return
   }
+  this.render("Post", {
+    data: yaml
+  })
 })
+
 Router.route('/pages/:_id', function() {
   const params = this.params
   this.layout('ApplicationLayout')
@@ -30,11 +33,11 @@ Router.route('/pages/:_id', function() {
     type: "page"
   })
 
-  if (yaml) {
-    this.render("About", {
-      data: yaml
-    })
-  }else{
+  if (!yaml) {
     this.render("Void")
+    return
   }
+  this.render("About", {
+    data: yaml
+  })
 })

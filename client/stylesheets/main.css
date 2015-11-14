@@ -17,3 +17,7 @@ body {
 .readonly {
   -webkit-user-select: none;
 }
+a {
+  color: rgb(50, 175, 65);
+  border: 0px !important;
+}
