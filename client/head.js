@@ -2,7 +2,7 @@ Meteor.subscribe("yamls")
 
 DarkThemeMode = (() => {
   let mode = {}
-  let excludeSelectorList = [".leave-alone-in-dark-mode"]
+  let excludeSelectorList = ["img", ".leave-alone-in-dark-mode"]
 
   let IS_DARK_MODE_KEY = "isDarkMode"
   Session.set(IS_DARK_MODE_KEY, false)

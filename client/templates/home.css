@@ -1,0 +1,35 @@
+#profile {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#profile #avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+#contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+#contact i {
+  margin-left: 20px;
+}
+#contact:first {
+  margin-right: 0px;
+}
+#contact a {
+  color: black;
+}
+#footer {
+  clear: both;
+  padding: 60px 0 30px;
+  text-align: center;
+  font-weight: 100;
+}
