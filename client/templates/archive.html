@@ -1,3 +1,8 @@
 <template name="Archive">
-  ARCHIVE
+  <h1>文章列表</h1>
+  {{#each posts}}
+  <ul>
+    <li><a href="/posts/{{_id}}">{{title}}</a></li>
+  </ul>
+  {{/each}}
 </template>
