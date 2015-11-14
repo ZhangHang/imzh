@@ -1,3 +1,5 @@
+Meteor.subscribe("yamls")
+
 DarkThemeMode = (() => {
   let mode = {}
   let excludeSelectorList = [".leave-alone-in-dark-mode"]

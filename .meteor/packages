@@ -19,3 +19,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 showdown
 mizzao:user-status
 iron:router
+meteorhacks:npm
+
+
+npm-container

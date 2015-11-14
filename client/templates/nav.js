@@ -1,6 +1,9 @@
 Template.Nav.helpers({
   isDarkMode() {
     return DarkThemeMode.isOn()
+  },
+  pages(){
+    return YAMLs.find({type:"page"})
   }
 });
 
