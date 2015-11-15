@@ -9,6 +9,7 @@
   width: 200px;
   height: 200px;
   border-radius: 100px;
+  background-color: white;
 }
 #contact {
   display: flex;
@@ -16,6 +17,7 @@
   align-items: center;
   justify-content: center;
   margin-right: auto;
+
   margin-left: auto;
 }
 #contact i {
@@ -26,6 +28,15 @@
 }
 #contact a {
   color: black;
+}
+#profile::after {
+  content: '··•··';
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1.5em;
+  margin: 2em 0 3em 0;
+  color: #FF5E3A;
+  text-align: center;
 }
 #footer {
   clear: both;

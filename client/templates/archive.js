@@ -9,3 +9,7 @@ Template.Archive.helpers({
     })
   }
 })
+
+Template.Archive.rendered = () => {
+  DarkThemeMode.update()
+}

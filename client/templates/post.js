@@ -1,1 +1,3 @@
-Meteor.subscribe("posts")
+Template.Post.rendered = () => {
+  DarkThemeMode.update()
+}

@@ -14,22 +14,22 @@ DarkThemeMode = (() => {
 
   mode.on = () => {
     Session.set(IS_DARK_MODE_KEY, true)
-    update()
+    mode.update()
   }
 
   mode.off = () => {
     Session.set(IS_DARK_MODE_KEY, false)
-    update()
+    mode.update()
   }
 
   mode.isOn = () => {
     return Session.get(IS_DARK_MODE_KEY)
   }
 
-  function update() {
+  mode.update = () => {
     const colorInvertCSSRule = `invert(${mode.isOn() ? 100 : 0}%)`
     $("body").css("-webkit-filter", colorInvertCSSRule)
-    excludeSelectorList.forEach( selector => {
+    excludeSelectorList.forEach(selector => {
       $(selector).css("-webkit-filter", colorInvertCSSRule)
     })
   }

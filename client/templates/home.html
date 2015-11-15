@@ -3,10 +3,8 @@
     <img id="avatar" src="avatar.png">
     <br>
     <p style="text-align:center;">你好，我叫张航，是一名 iOS 开发者，目前居住在北京。</p>
-  </section>
-  <section id="contact">
-    <!-- It's a walkaround, We need this div tag -->
-    <div>
+    <div id="contact">
+      <!-- It's a walkaround, We need this div tag -->
       <a href="https://github.com/zhanghang" target="_blank"><i class="fa fa-github"></i></a>
       <a href="https://twitter.com/bjshdq" target="_blank"><i class="fa fa-twitter"></i></a>
       <a href="https://weibo.com/bjshdq" target="_blank"><i class="fa fa-weibo"></i></a>
@@ -15,7 +13,7 @@
     </div>
   </section>
 
-  <hr>
+  {{#if hasRecentPosts}}
   <p>下面是我最近的文章</p>
 
   {{#each recentPosts}}
@@ -23,9 +21,9 @@
     <li><a href="/posts/{{_id}}">{{title}}</a></li>
   </ul>
   {{/each}}
+  {{/if}}
 
-
-  <footer class="serif typo-small" id="footer">
+  <footer class="typo-small serif" id="footer">
     Powered by <a href="https://github.com/zhanghang/imzh" target="_blank">IMZH</a>
   </footer>
 
