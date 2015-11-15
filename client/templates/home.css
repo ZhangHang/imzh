@@ -33,7 +33,7 @@
   display: block;
   font-size: 11px;
   letter-spacing: 1.5em;
-  margin: 2em 0 3em 0;
+  margin: 2em -1.5em 3em 0;
   color: #FF5E3A;
   text-align: center;
 }
@@ -48,7 +48,7 @@
   display: block;
   font-size: 11px;
   letter-spacing: 1.5em;
-  margin: 2em 0 3em 0;
+  margin: 2em -1.5em 3em 0;
   color: #FF5E3A;
   text-align: center;
 }
