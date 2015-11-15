@@ -1,3 +1,3 @@
 Template.Post.rendered = () => {
-  DarkThemeMode.update()
+  Light.update()
 }

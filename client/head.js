@@ -1,38 +1,38 @@
 Meteor.subscribe("yamls")
 
-DarkThemeMode = (() => {
-  let mode = {}
-  let excludeSelectorList = ["img", ".leave-alone-in-dark-mode"]
+Light = (() => {
+  let core = {}
+  let excludeSelectors = ["img", ".keep-light"]
 
-  let IS_DARK_MODE_KEY = "isDarkMode"
-  Session.set(IS_DARK_MODE_KEY, false)
+  let IS_LIGHT_ON_KEY = "isLightOn"
+  Session.set(IS_LIGHT_ON_KEY, true)
 
-  mode.exclude = (selector) => {
+  core.exclude = (selector) => {
     console.assert(typeof selector === "string")
-    excludeSelectorList.push(selector)
+    excludeSelectors.push(selector)
   }
 
-  mode.on = () => {
-    Session.set(IS_DARK_MODE_KEY, true)
-    mode.update()
+  core.on = () => {
+    Session.set(IS_LIGHT_ON_KEY, true)
+    core.update()
   }
 
-  mode.off = () => {
-    Session.set(IS_DARK_MODE_KEY, false)
-    mode.update()
+  core.off = () => {
+    Session.set(IS_LIGHT_ON_KEY, false)
+    core.update()
   }
 
-  mode.isOn = () => {
-    return Session.get(IS_DARK_MODE_KEY)
+  core.isOn = () => {
+    return Session.get(IS_LIGHT_ON_KEY)
   }
 
-  mode.update = () => {
-    const colorInvertCSSRule = `invert(${mode.isOn() ? 100 : 0}%)`
+  core.update = () => {
+    const colorInvertCSSRule = `invert(${core.isOn() ? 0 : 100}%)`
     $("body").css("-webkit-filter", colorInvertCSSRule)
-    excludeSelectorList.forEach(selector => {
+    excludeSelectors.forEach(selector => {
       $(selector).css("-webkit-filter", colorInvertCSSRule)
     })
   }
 
-  return mode
+  return core
 })()

@@ -19,5 +19,5 @@ Template.Home.helpers({
 })
 
 Template.Home.rendered = () => {
-  DarkThemeMode.update()
+  Light.update()
 }

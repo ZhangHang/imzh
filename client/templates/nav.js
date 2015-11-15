@@ -1,6 +1,6 @@
 Template.Nav.helpers({
-  isDarkMode() {
-    return DarkThemeMode.isOn()
+  isLightOn() {
+    return Light.isOn()
   },
   pages(){
     return YAMLs.find({type:"page"})
@@ -9,10 +9,10 @@ Template.Nav.helpers({
 
 Template.Nav.events({
   'click #dark-mode-switch' (event, template) {
-    if (DarkThemeMode.isOn()) {
-      DarkThemeMode.off()
+    if (Light.isOn()) {
+      Light.off()
     } else {
-      DarkThemeMode.on()
+      Light.on()
     }
   }
 });

@@ -11,5 +11,5 @@ Template.Archive.helpers({
 })
 
 Template.Archive.rendered = () => {
-  DarkThemeMode.update()
+  Light.update()
 }
