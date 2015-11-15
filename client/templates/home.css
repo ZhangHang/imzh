@@ -17,7 +17,6 @@
   align-items: center;
   justify-content: center;
   margin-right: auto;
-
   margin-left: auto;
 }
 #contact i {
@@ -43,4 +42,19 @@
   padding: 60px 0 30px;
   text-align: center;
   font-weight: 100;
+}
+.has-seperator {
+  content: '··•··';
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1.5em;
+  margin: 2em 0 3em 0;
+  color: #FF5E3A;
+  text-align: center;
+}
+.center-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }

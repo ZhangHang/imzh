@@ -1,8 +1,13 @@
 <template name="Archive">
-  <h1>文章列表</h1>
-  {{#each posts}}
-  <ul>
-    <li><a href="/posts/{{_id}}">{{title}}</a></li>
-  </ul>
-  {{/each}}
+  {{#if hasPosts}}
+    {{#each posts}}
+      <ul>
+        <li><a href="/posts/{{_id}}">{{title}}</a></li>
+      </ul>
+    {{/each}}
+  {{else}}
+  <section class="center-child readonly" style="margin-top:150px;opacity:0.2;">
+    <i class="fa fa-battery-half fa-2x"> 作者正在充电，还什么都没写...</i>
+  </section>
+  {{/if}}
 </template>
