@@ -1,3 +1,4 @@
 {
-  "StaticRootPath": "YOUR_STATIC_ROOT_PATH"
+  "UpdateWebHookSecretKey":"YOUR_SECRET_KEY",
+  "UpdateWebHookSecret":"YOUR_SECRET"
 }

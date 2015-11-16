@@ -4,9 +4,11 @@ const path = Meteor.npmRequire('path')
 const walk = Meteor.npmRequire('walkdir')
 const yfm = Meteor.npmRequire('yaml-front-matter')
 
-StaticYAML = function(storageCollection, staticRootPath) {
+YAMLImporter = function(storageCollection, staticRootPath) {
   console.assert(storageCollection)
   console.assert(staticRootPath)
+
+  var self = this
 
   this.update = function() {
     storageCollection.remove({})
@@ -51,5 +53,40 @@ StaticYAML = function(storageCollection, staticRootPath) {
 
     yaml["_id"] = filename
     return yaml
+  }
+
+  this.installWebHook = function(webHookPath, secretKey, secret) {
+    let updateProcess = undefined
+
+    Router.route(webHookPath, {
+        where: "server"
+      })
+      .post(function() {
+        if (this.request.headers[secretKey] != secret) {
+          this.response.writeHead(400, {
+            'Content-Type': 'text/plain;charset=utf-8'
+          })
+          this.response.end("Wrong secret.")
+          return
+        }
+
+        const child_process = Meteor.npmRequire('child_process')
+        if (!updateProcess) {
+          updateProcess = child_process.spawn('git', ['pull'], {
+            cwd: staticRootPath,
+            stdio: 'inherit'
+          })
+
+          updateProcess.on('exit', Meteor.bindEnvironment(function(output) {
+            updateProcess = undefined
+            self.update()
+          }))
+        }
+
+        this.response.writeHead(200, {
+          'Content-Type': 'text/plain;charset=utf-8'
+        })
+        this.response.end("更新中")
+      })
   }
 }
