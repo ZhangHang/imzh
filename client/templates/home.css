@@ -4,6 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 #profile #avatar {
   width: 200px;

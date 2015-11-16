@@ -7,11 +7,10 @@ body {
   min-height: 100%;
   background-color: white;
 }
-
 #container {
   display: flex;
   flex-direction: column;
-  margin: 60px auto 0px auto;
+  margin: 60px auto 0 auto;
   min-width: 360px;
   max-width: 640px;
 }
