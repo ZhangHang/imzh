@@ -1,4 +1,9 @@
 {
-  "UpdateWebHookSecretKey":"YOUR_SECRET_KEY",
-  "UpdateWebHookSecret":"YOUR_SECRET"
+  "StaticRootPath": "YOUR_STATIC_ROOT_PATH",
+  "UpdateWebHookSecretKey": "YOUR_SECRET_KEY",
+  "UpdateWebHookSecret": "YOUR_SECRET",
+  "kadira": {
+    "appId": "APP_ID",
+    "appSecret": "APP_SECRET"
+  }
 }
