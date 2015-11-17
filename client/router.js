@@ -36,7 +36,7 @@ Router.route('/pages/:_id', function() {
     this.render("Void")
     return
   }
-  this.render("About", {
+  this.render("Page", {
     data: yaml
   })
 })
